@@ -22,14 +22,22 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
+      # Configurar JDK para construir el proyecto de Android
       - name: Set-Up JDK
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+        
+      # Permite ejecutar ./gradlew
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+        
+      # Ejecuta prueba de construcción de app Android
       - name: Run-Tests
         run: ./gradlew test
-
+         
+      # Construcción del proyecto
       - name: Build-Project
         run: ./gradlew assemble
