@@ -25,24 +25,25 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - uses: actions/checkout@v1
-
-      - name: Set-Up JDK
+      # Configurar JDK para construir el proyecto de Android
+      - name: Set-Up JDK #El nombre que tu elijas
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-
+        
+      # Permite ejecutar ./gradlew
       - name: Make gradlew executable
         run: chmod +x ./gradlew
         
-# Ejecuta prueba de construcción de app Android
+      # Ejecuta prueba de construcción de app Android
       - name: Run-Lint
         run: ./gradlew lint
-
+         
+      # Construcción del proyecto
       - name: Build-Project
         run: ./gradlew assemble
-        
-# Reporte de lint
+
+      # Reporte de lint
       - name: Upload html test report
         uses: actions/upload-artifact@v2
         with:
