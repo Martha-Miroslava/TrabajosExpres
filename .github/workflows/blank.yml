@@ -34,9 +34,18 @@ jobs:
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
-
-      - name: Run-Tests
-        run: ./gradlew test
+        
+# Ejecuta prueba de construcción de app Android
+      - name: Run-Lint
+        run: ./gradlew lint
 
       - name: Build-Project
         run: ./gradlew assemble
+        
+# Reporte de lint
+      - name: Upload html test report
+        uses: actions/upload-artifact@v2
+        with:
+          name: lint_html_report
+          path: app/build/reports/lint-results-debug.html
+        
