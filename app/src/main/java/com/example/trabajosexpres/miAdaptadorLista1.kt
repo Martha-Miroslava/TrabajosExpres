@@ -21,16 +21,16 @@ class miAdaptadorLista1(contexto: Context) : BaseAdapter() {
     //generar filas
     override fun getView(position: Int, p1: View?, viewGroup: ViewGroup?): View {
         val layoutInflater = LayoutInflater.from(miContexto)
-        val listRowLayout = layoutInflater.inflate(R.layout.fila_lista1, viewGroup, false)
-        val txtHead = listRowLayout.findViewById<TextView>(R.id.textEncabezado)
+        val listRowLayout = layoutInflater.inflate(R.layout.row_service, viewGroup, false)
+        /*val txtHead = listRowLayout.findViewById<TextView>(R.id.TextEncabezado)
         val txtDescription = listRowLayout.findViewById<TextView>(R.id.textDescripcion)
-        val image = listRowLayout.findViewById<ImageView>(R.id.imageView)
+        val image = listRowLayout.findViewById<ImageView>(R.id.ImageViewService)
         txtDescription.text = "Hola soy la fila # $position"
         txtHead.text = "Soy el encabezado #$position"
         Glide.with(miContexto)
             .load("https://cf.ltkcdn.net/gatos/images/std/236641-699x450-etapas-desarrollo-gatitos.jpg")
             .apply(RequestOptions().override(200, 200))
-            .into(image)
+            .into(image)*/
         return listRowLayout
     }
 
