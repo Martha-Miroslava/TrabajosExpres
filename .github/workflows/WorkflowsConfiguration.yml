@@ -92,7 +92,10 @@ jobs:
 
       - name: Build debug APK
         run: ./gradlew assembleDebug
-
+      
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+  
       - name: Upload APK
         uses: actions/upload-artifact@v2
         with:
