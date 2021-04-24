@@ -193,14 +193,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
                 android:hint="Estado">
 
                 <AutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"
                     android:inputType="none" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -211,14 +209,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
                 android:hint="Ciudad">
 
                 <AutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"
                     android:inputType="none" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -256,7 +252,6 @@
                     android:freezesText="false"
                     android:text="Cancelar" />
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

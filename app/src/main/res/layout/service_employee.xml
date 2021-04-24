@@ -26,37 +26,91 @@
                 app:titleTextAppearance="@style/TextAppearance.AppCompat.Large" />
         </com.google.android.material.appbar.AppBarLayout>
 
+        <TextView
+            android:id="@+id/TextViewService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:fontFamily="sans-serif"
+            android:text="Servicio X"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textColorLink="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/ButtonData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Datos" />
+
+            <Button
+                android:id="@+id/ButtonGalery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Galería" />
+        </LinearLayout>
+
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:background="#000000"
-                    android:fontFamily="sans-serif"
-                    android:text="Eliminar Cuenta"
-                    android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:textColor="#FFFFFF"
-                    android:textColorLink="#FFFFFF"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/ImageViewUser"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:adjustViewBounds="false"
-                    android:cropToPadding="true"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    <ImageView
+                        android:id="@+id/ImageViewUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:adjustViewBounds="false"
+                        android:cropToPadding="true"
+                        tools:srcCompat="@tools:sample/avatars" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="80dp"
+                        android:layout_marginTop="40dp"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/ButtonEdit"
+                            style="@style/Widget.MaterialComponents.Button.Icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="30dp"
+                            android:text="Editar"
+                            app:icon="@drawable/edit" />
+
+                        <Button
+                            android:id="@+id/ButtonDelete"
+                            style="@style/Widget.MaterialComponents.Button.Icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Eliminar"
+                            app:icon="@drawable/delete" />
+
+                    </LinearLayout>
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -78,15 +132,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"
-                    android:ems="10">
-                </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginEnd="15dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:text="Apellidos: "
+                    android:text="Eslogan: "
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="15dp"
                     android:ems="10"
@@ -97,20 +149,18 @@
                 </TextView>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/TextFieldLastName"
+                    android:id="@+id/TextFieldSlogan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"
-                    android:ems="10">
-                </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginEnd="15dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:text="Fecha de Nacimiento: "
+                    android:text="Tipo: "
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="15dp"
                     android:ems="10"
@@ -121,19 +171,18 @@
                 </TextView>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/TextFieldDateBirth"
+                    android:id="@+id/TextFieldType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"
-                    android:ems="10"></com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginEnd="15dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:text="Correo: "
+                    android:text="Costo: "
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="15dp"
                     android:ems="10"
@@ -144,19 +193,18 @@
                 </TextView>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/TextFieldEmail"
+                    android:id="@+id/TextFieldCost"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"
-                    android:ems="10"></com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginEnd="15dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:text="Ciudad: "
+                    android:text="Descripción: "
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="15dp"
                     android:ems="10"
@@ -167,7 +215,29 @@
                 </TextView>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/TextFieldCity"
+                    android:id="@+id/TextFieldDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Horiario: "
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:ems="10"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:typeface="normal">
+                </TextView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/TextFieldSchedule"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
@@ -200,7 +270,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:text="Usuario: "
+                    android:text="Ciudad: "
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="15dp"
                     android:ems="10"
@@ -211,60 +281,12 @@
                 </TextView>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/TextFieldUserName"
+                    android:id="@+id/TextFieldCity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="15dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:text="Constraseña: "
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"
-                    android:ems="10"
-                    android:textColor="#000000"
-                    android:textStyle="bold"
-                    android:textSize="15sp"
-                    android:typeface="normal">
-                </TextView>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/TextFieldPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginBottom="50dp"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/ButtonDelete"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Eliminar" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/ButtonCancel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:layout_weight="1"
-                        android:freezesText="false"
-                        android:text="Cancelar" />
-                </LinearLayout>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

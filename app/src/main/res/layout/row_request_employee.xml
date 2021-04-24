@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -14,7 +14,7 @@
 
 
         <ImageView
-            android:id="@+id/ImageViewService"
+            android:id="@+id/ImageViewUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="string/todo"
@@ -31,23 +31,32 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/TextViewNameService"
+                android:id="@+id/TextViewUser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="NameService"
+                android:text="User"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 tools:ignore="MissingConstraints" />
 
             <TextView
-                android:id="@+id/TextViewSlogan"
+                android:id="@+id/TextViewDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="13dp"
-                android:text="Slogna"
+                android:layout_marginBottom="15dp"
+                android:text="Date"
                 tools:ignore="MissingConstraints" />
 
+            <TextView
+                android:id="@+id/TextViewHour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:text="Hour"
+                tools:ignore="MissingConstraints" />
         </LinearLayout>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
