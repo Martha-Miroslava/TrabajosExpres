@@ -21,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:logo="@drawable/iconomenu"
-                app:navigationIcon="@drawable/shr_menu"
+                app:navigationIcon="@drawable/menu"
                 app:title="!Bienvenido Usuario X!"
                 app:titleTextAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -206,7 +206,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="40dp"
                             android:text="Eliminar"
-                            app:icon="@drawable/outline_delete_24" />
+                            app:icon="@drawable/delete" />
 
                         <Button
                             android:id="@+id/ButtonChangePassword"
@@ -216,7 +216,7 @@
                             android:layout_marginEnd="10dp"
                             android:text="Cambiar contraseña"
                             android:textSize="11sp"
-                            app:icon="@drawable/outline_password_24" />
+                            app:icon="@drawable/password" />
                     </LinearLayout>
                 </LinearLayout>
 

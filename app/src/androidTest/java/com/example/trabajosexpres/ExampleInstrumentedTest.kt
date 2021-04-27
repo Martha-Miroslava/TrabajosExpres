@@ -1,14 +1,13 @@
 package com.example.trabajosexpres
 
-/*import android.widget.Toast
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
-import androidx.test.espresso.action.ViewActions.click
-import androidx.test.espresso.action.ViewActions.typeText
+import androidx.test.espresso.action.ViewActions
+import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import androidx.test.espresso.matcher.ViewMatchers.withText*/
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Test
@@ -30,11 +29,17 @@ class ExampleInstrumentedTest {
         assertEquals("com.example.trabajosexpres", appContext.packageName)
     }
 
-    /*@Test
+    @Test
     fun LogInCorrect() {
         ActivityScenario.launch(Login:: class.java)
         onView(withId(R.id.TextFieldUserName)).perform(typeText("MiroStar"))
-        onView(withId(R.id.TextFieldPassword)).perform(typeText("Mmmol180515"))
-        onView(withId(R.id.ButtonLogIn)).perform(click())
-    }*/
+                .perform(closeSoftKeyboard())
+        Thread.sleep(250)
+        onView(withId(R.id.TextFieldPassword)).perform(ViewActions.typeText("Mmmol180515"))
+                .perform(closeSoftKeyboard())
+        Thread.sleep(250)
+        onView(withId(R.id.ButtonLogIn)).perform(ViewActions.click())
+        Thread.sleep(300)
+        //onView(withId(R.id.textView2)).check(matches(withText("Success")))
+    }
 }
