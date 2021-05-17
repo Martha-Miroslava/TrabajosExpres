@@ -16,12 +16,15 @@ class Login : AppCompatActivity() {
         button.setOnClickListener {
             val textViewUserName =findViewById<TextView>(R.id.TextFieldUserName)
             val textViewPassword =findViewById<TextView>(R.id.TextFieldPassword)
+            val textViewSucces =findViewById<TextView>(R.id.textView2)
             val userName: String = textViewUserName.text.toString()
             val password: String = textViewPassword.text.toString()
 
-            if(!userName.isNullOrEmpty() && password.isNullOrEmpty()) {
+            if(!(userName.isNullOrEmpty() && password.isNullOrEmpty())) {
+                textViewSucces.text = "Exito"
                 sendMessage("Registrado con exito")
             } else {
+                textViewSucces.text = "Fallo"
                 sendMessage("Ingrese datos correctos")
             }
         }
