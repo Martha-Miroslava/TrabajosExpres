@@ -20,9 +20,9 @@ package com.example.trabajosexpres.Model
 data class State (
 
         /* ID of State */
-        val id: kotlin.Long? = null,
+        val idState: Int,
         /* name of state */
-        val name: kotlin.String,
-        val country: Country? = null
+        val name: String,
+        val idCountry: Int
 ) {
 }
