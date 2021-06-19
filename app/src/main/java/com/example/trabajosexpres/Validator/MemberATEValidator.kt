@@ -18,7 +18,7 @@ class MemberATEValidator : AbstractValidator<MemberATE> {
             .withMessage("Ingresa un nombre correcto")
             .must(StringPredicate.stringMatches("^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\\s]*)+\$"))
             .withMessage("Ingresa un nombre correcto")
-            .must(StringPredicate.stringSizeBetween(1, 50)).`when`(LogicalPredicate.not(StringPredicate.stringEmptyOrNull()))
+            .must(StringPredicate.stringSizeBetween(2, 50)).`when`(LogicalPredicate.not(StringPredicate.stringEmptyOrNull()))
             .withMessage("Ingresa un nombre correcto")
 
         ruleFor(MemberATE::lastName)
@@ -26,7 +26,7 @@ class MemberATEValidator : AbstractValidator<MemberATE> {
             .withMessage("Ingresa un apellido correcto")
             .must(StringPredicate.stringMatches("^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\\s]*)+\$"))
             .withMessage("Ingresa un apellido correcto")
-            .must(StringPredicate.stringSizeBetween(1, 50)).`when`(LogicalPredicate.not(StringPredicate.stringEmptyOrNull()))
+            .must(StringPredicate.stringSizeBetween(2, 50)).`when`(LogicalPredicate.not(StringPredicate.stringEmptyOrNull()))
             .withMessage("Ingresa un apellido correcto")
 
         ruleFor(MemberATE::email)

@@ -1,5 +1,6 @@
 package com.example.trabajosexpres.Volley
 
+
 import android.content.Context
 import android.graphics.Bitmap
 import android.util.LruCache
@@ -14,12 +15,12 @@ class VolleySingleton  constructor(context: Context) {
         private var INSTANCE: VolleySingleton? = null
         fun getInstance(context: Context) =
             INSTANCE
-                    ?: synchronized(this) {
-                INSTANCE
+                ?: synchronized(this) {
+                    INSTANCE
                         ?: VolleySingleton(context).also {
-                    INSTANCE = it
+                            INSTANCE = it
+                        }
                 }
-            }
     }
     val imageLoader: ImageLoader by lazy {
         ImageLoader(requestQueue,
