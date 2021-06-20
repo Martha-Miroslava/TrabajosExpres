@@ -212,6 +212,28 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Horario"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="150"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    app:errorEnabled="false"
+                    app:helperText="Caracteres a-z0-9"
+                    app:helperTextEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/TextFieldWorkingHours"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="15dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/TextFieldMenuState"
                     style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                     android:layout_width="match_parent"
@@ -257,6 +279,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="registerServiceClicked"
                         android:text="Registrar" />
 
                     <com.google.android.material.button.MaterialButton
@@ -266,6 +289,7 @@
                         android:layout_marginLeft="30dp"
                         android:layout_weight="1"
                         android:freezesText="false"
+                        android:onClick="behindClicked"
                         android:text="Cancelar" />
                 </LinearLayout>
             </LinearLayout>
