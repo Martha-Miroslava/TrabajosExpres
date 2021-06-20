@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:fitsSystemWindows="true" tools:context=".HomeEmployee">
+
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
+
+		<com.google.android.material.appbar.AppBarLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				tools:ignore="MissingConstraints">
+
+			<com.google.android.material.appbar.MaterialToolbar
+					android:id="@+id/TopAppBar"
+					style="@style/Widget.MaterialComponents.Toolbar.Primary"
+					android:layout_width="match_parent"
+					android:layout_height="?attr/actionBarSize"
+					app:logo="@drawable/iconomenu"
+					app:menu="@menu/top_app_bar"
+					app:navigationIcon="@drawable/menu"
+					app:title="!Bienvenido Usuario X!"
+					app:titleTextAppearance="@style/TextAppearance.AppCompat.Small"/>
+		</com.google.android.material.appbar.AppBarLayout>
+
+		<ListView
+				android:id="@+id/ListViewService"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"/>
+	</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

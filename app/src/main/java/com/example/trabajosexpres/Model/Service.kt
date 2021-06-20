@@ -30,15 +30,13 @@ package com.example.trabajosexpres.Model
 data class Service (
 
         /* ID of service */
-        val id: kotlin.Long? = null,
-        val city: City? = null,
-        val country: Country? = null,
-        val state: State? = null,
-        val memberATE: MemberATE? = null,
+        val idService: kotlin.Long? = null,
+        val idCity: Int,
+        val idMemberATE: Int,
         /* name of sevice */
         val name: kotlin.String,
-        val minimalCost: Cost,
-        val maximumCost: Cost,
+        val minimalCost: Int,
+        val maximumCost: Int,
         /* description of sevice */
         val descriptionService: kotlin.String,
         /* slogan of sevice */
