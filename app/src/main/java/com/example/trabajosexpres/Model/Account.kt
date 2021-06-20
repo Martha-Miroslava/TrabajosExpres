@@ -21,12 +21,7 @@ package com.example.trabajosexpres.Model
 data class Account(
 
         /* ID of account */
-        val idAccount: Int,
+        val email: String
         /* username of account */
-        val username: String,
-        /* encrypted password */
-        val password: String,
-        /*Type of Account*/
-        val accountType: () -> AccountType
 ) {
 }

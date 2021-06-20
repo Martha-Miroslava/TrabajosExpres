@@ -9,7 +9,7 @@ import org.junit.Test
 
 class AccountValidatorTest {
 
-    @Test
+    /*@Test
     fun account_isCorrect() {
         val accountValidator = AccountValidator()
         val  accountsTypes = { AccountType(1, AccountType.AccountStatus.ACTIVE, AccountType.AccountType.CLIENT) }
@@ -98,5 +98,5 @@ class AccountValidatorTest {
         val validate: ValidationResult = accountValidator.validate(account)
         Assert.assertFalse(validate.isValid)
         org.junit.Assert.assertThat(validate.getErrors().size, IsEqual.equalTo(2));
-    }
+    }*/
 }
