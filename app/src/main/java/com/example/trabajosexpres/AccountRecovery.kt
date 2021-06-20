@@ -30,7 +30,7 @@ class AccountRecovery: AppCompatActivity() {
     fun SendCodeAccountClicked(view : View) {
         val textFieldEmail =findViewById<TextView>(R.id.TextFieldEmail)
         val email: String = textFieldEmail.text.toString()
-        val account = com.example.trabajosexpres.Model.Account(email)
+        val account = Account(email)
         val validatorAccount: Validator<Account> = AccountValidator()
         val  result: ValidationResult = validatorAccount.validate(account);
         if(result.isValid){
@@ -48,7 +48,7 @@ class AccountRecovery: AppCompatActivity() {
             )
             VolleySingleton.getInstance(this).addToRequestQueue(request)
         }else{
-            sendMessage("Ingrese dato un correo correcto")
+            sendMessage(result.errors.elementAt(0).message)
         }
     }
 
@@ -86,7 +86,7 @@ class AccountRecovery: AppCompatActivity() {
                 sendMessage("La cofirmación debe ser la misma que la contraseña")
             }
         }else{
-            sendMessage(result.errors.toString())
+            sendMessage(result.errors.elementAt(0).message)
         }
     }
 
