@@ -7,11 +7,10 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.Request
 import com.android.volley.Response
-import com.example.trabajosexpres.Model.Token
-import com.example.trabajosexpres.Volley.GsonRequest
+import com.example.trabajosexpres.HTTPRequest.HTTPRequest
 import com.example.trabajosexpres.Volley.VolleySingleton
-import org.json.JSONException
 import org.json.JSONObject
 
 
@@ -26,22 +25,25 @@ class Login : AppCompatActivity() {
     fun searchAccount(){
         val url = "http://10.0.2.2:5000/logins"
         val login = createDataLogin()
-        val mapHeaders : MutableMap<String, String> = mutableMapOf<String,String>()
-        mapHeaders.put ( "username" ,  login.username )
-        mapHeaders.put ( "password" ,  login.password )
-        val gsonRequest: GsonRequest<Token> = GsonRequest<Token>(
+        val payload = JSONObject()
+        payload.put("username", login.username)
+        payload.put("password", login.password)
+        val request = HTTPRequest(
+                Request.Method.POST,
                 url,
-                Token::class.java,
-                mapHeaders,
-                requestSuccessListener(),
+                payload,
+                Response.Listener {
+                    token = it.get("token") as Nothing?
+                },
                 requestErrorListener()
+
         )
-        VolleySingleton.getInstance(this).addToRequestQueue(gsonRequest)
+        VolleySingleton.getInstance(this).addToRequestQueue(request)
     }
 
-    private fun requestSuccessListener(): Response.Listener<Token> {
-        return Response.Listener<Token> { response ->
-            token = response as Nothing?
+    private fun requestSuccessListener(): Response.Listener<JSONObject> {
+        return Response.Listener { response ->
+            token = response.get("token") as Nothing?
         }
     }
 
