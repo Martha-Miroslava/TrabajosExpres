@@ -46,14 +46,20 @@ class Login : AppCompatActivity() {
 			when (response.getInt("memberATEType")) {
 				1 -> intent = Intent(this, HomeEmployee::class.java) // TODO aqui va el cliente
 				2 -> intent = Intent(this, HomeEmployee::class.java)
-				3 -> intent = Intent(this, HomeEmployee::class.java) // TODO aqui va el admin
+				3 -> Toast.makeText(
+					this,
+					"Los administradores aun no están soportados",
+					Toast.LENGTH_SHORT
+				).show()
 			}
-			intent.putExtra("token", response.getString("token"))
-			intent.putExtra("memberATEType", response.getInt("memberATEType"))
-			intent.putExtra("idMemberATE", response.getInt("idMemberATE"))
-			intent.putExtra("idCity", response.getInt("idCity"))
-			startActivity(intent)
-			finish()
+			if (response.getInt("memberATEType") < 3) {
+				intent.putExtra("token", response.getString("token"))
+				intent.putExtra("memberATEType", response.getInt("memberATEType"))
+				intent.putExtra("idMemberATE", response.getInt("idMemberATE"))
+				intent.putExtra("idCity", response.getInt("idCity"))
+				startActivity(intent)
+				finish()
+			}
 		}
 	}
 
