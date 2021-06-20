@@ -26,7 +26,6 @@ class AccountAddition: AppCompatActivity() {
     private fun requestErrorListener(): Response.ErrorListener {
         return Response.ErrorListener { error ->
             Log.e("ERROR", error.toString())
-            sendMessage(error.toString())
         }
     }
 

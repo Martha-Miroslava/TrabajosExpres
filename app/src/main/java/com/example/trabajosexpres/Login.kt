@@ -10,11 +10,22 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.Response
 import com.example.trabajosexpres.HTTPRequest.HTTPRequest
+import com.example.trabajosexpres.Model.CodeConfirmation
 import com.example.trabajosexpres.Volley.VolleySingleton
 import org.json.JSONObject
 
 
 class Login : AppCompatActivity() {
+	companion object {
+		lateinit var usernameAccount: String
+		fun getUsername(): String { return usernameAccount }
+		fun setUsername(user: String) { usernameAccount = user }
+
+		lateinit var passwordUser: String
+		fun getPassword(): String { return passwordUser }
+		fun setPassword(passwordAccount: String) { passwordUser = passwordAccount }
+	}
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.login)
@@ -41,7 +52,7 @@ class Login : AppCompatActivity() {
 		return Response.Listener { response ->
 			var intent = Intent(this, HomeEmployee::class.java)
 			when (response.getInt("memberATEType")) {
-				1 -> intent = Intent(this, HomeEmployee::class.java) // TODO aqui va el cliente
+				1 -> intent = Intent(this, Home::class.java) // TODO aqui va el cliente
 				2 -> intent = Intent(this, HomeEmployee::class.java)
 				3 -> Toast.makeText(
 					this,
@@ -88,6 +99,8 @@ class Login : AppCompatActivity() {
 		val textViewPassword = findViewById<TextView>(R.id.TextFieldPassword)
 		val userName: String = textViewUserName.text.toString()
 		val password: String = textViewPassword.text.toString()
+		Login.setUsername(userName)
+		Login.setPassword(password)
 		val login = com.example.trabajosexpres.Model.Login(userName, password)
 		return login
 	}
