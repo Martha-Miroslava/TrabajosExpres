@@ -33,7 +33,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             app:counterEnabled="true"
-            app:counterMaxLength="150"
+            app:counterMaxLength="254"
             app:errorEnabled="false"
             app:helperText="Caracteres a-z/9-0#@_"
             app:helperTextEnabled="true">
@@ -54,7 +54,7 @@
             android:layout_marginEnd="15dp"
             android:layout_marginTop="20dp"
             app:counterEnabled="true"
-            app:counterMaxLength="6"
+            app:counterMaxLength="7"
             app:errorEnabled="false"
             android:hint="Código de recuperación"
             app:helperText="Caracteres 0-9"
