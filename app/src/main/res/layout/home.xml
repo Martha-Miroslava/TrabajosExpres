@@ -24,7 +24,7 @@
                 app:logo="@drawable/iconomenu"
                 app:menu="@menu/top_app_bar"
                 app:navigationIcon="@drawable/menu"
-                app:title="!Bienvenido Usuario X!"
+                app:title="!Bienvenido Usuario "
                 app:titleTextAppearance="@style/TextAppearance.AppCompat.Small" />
         </com.google.android.material.appbar.AppBarLayout>
 

@@ -130,11 +130,11 @@ class ServiceAddition: AppCompatActivity() {
         val slogan: String = textViewSlogan.text.toString()
         val typeService: String = textViewTypeService.text.toString()
         val minimalCost: String = textViewMinimalCost.text.toString()
-        val minimalCostInt = minimalCost.toInt()
+        val minimalCostInt = minimalCost.toDouble()
         val maximumCost: String = textViewMaximumCost.text.toString()
-        val maximumCostInt = maximumCost.toInt()
+        val maximumCostInt = maximumCost.toDouble()
         val workingHours: String = textViewWorkingHours.text.toString()
-        val serviceAdd = Service(null, idCity, memberATE, name, minimalCostInt, maximumCostInt, descriptionService, slogan, typeService, workingHours, Service.ServiceStatus.ACTIVE)
+        val serviceAdd = Service(0, idCity, memberATE, name, minimalCostInt, maximumCostInt, descriptionService, slogan, typeService, workingHours, 1)
         return serviceAdd
     }
     private fun sendMessage(message: String) {
