@@ -30,13 +30,13 @@ package com.example.trabajosexpres.Model
 data class Service (
 
         /* ID of service */
-        val idService: kotlin.Long? = null,
+        val idService: Int = 0,
         val idCity: Int,
         val idMemberATE: Int,
         /* name of sevice */
         val name: kotlin.String,
-        val minimalCost: Int,
-        val maximumCost: Int,
+        val minimalCost: Double,
+        val maximumCost: Double,
         /* description of sevice */
         val descriptionService: kotlin.String,
         /* slogan of sevice */
@@ -46,15 +46,5 @@ data class Service (
         /* Service hours */
         val workingHours: kotlin.String,
         /* service status */
-        val serviceStatus: Service.ServiceStatus
-) {
-    /**
-     * service status
-     * Values: ACTIVE,INACTIVE,BLOCKEDUP
-     */
-    enum class ServiceStatus(val value: kotlin.String){
-        ACTIVE("Active"),
-        INACTIVE("Inactive"),
-        BLOCKEDUP("BlockedUp");
-    }
-}
+        val serviceStatus: Int
+)
