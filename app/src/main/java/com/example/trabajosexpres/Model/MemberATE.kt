@@ -27,12 +27,17 @@ data class MemberATE (
         /* Email of MemberATE */
         val email: kotlin.String,
         /* Date birth of MemberATE */
-        val dateBirth: java.time.LocalDate,
+        val dateBirth: String,
         /* lastName of MemberATE */
         val lastName: kotlin.String,
         /* name of MemberATE */
         val name: kotlin.String,
-        /*Resource of MemberATE*/
-        val resource: Resource? = null
+        val username: String,
+        /* encrypted password */
+        val password: String,
+        /*Type of Account*/
+        val accountType: Int,
+        val idCity: Int,
+        val memberATEStatus:Int
 ) {
 }

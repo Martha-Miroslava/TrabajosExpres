@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.Response
@@ -34,6 +35,9 @@ class Login : AppCompatActivity() {
                 payload,
                 Response.Listener {
                     token = it.get("token") as Nothing?
+                    val home = Intent(this, Home::class.java)
+                    startActivity(home)
+                    finish()
                 },
                 requestErrorListener()
 
@@ -41,15 +45,10 @@ class Login : AppCompatActivity() {
         VolleySingleton.getInstance(this).addToRequestQueue(request)
     }
 
-    private fun requestSuccessListener(): Response.Listener<JSONObject> {
-        return Response.Listener { response ->
-            token = response.get("token") as Nothing?
-        }
-    }
-
     private fun requestErrorListener(): Response.ErrorListener {
         return Response.ErrorListener { error ->
             Log.e("ERROR", error.toString())
+            sendMessage("Ocurrio un problema. Intente más tarde")
         }
     }
 

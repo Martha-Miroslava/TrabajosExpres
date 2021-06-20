@@ -38,8 +38,8 @@
             app:helperText="Caracteres a-z/9-0#@_"
             app:helperTextEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/TextFieldEmail"
                 android:layout_width="match_parent"
+                android:id="@+id/TextFieldEmail"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
@@ -131,7 +131,8 @@
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Enviar código de recuperación" />
+                android:text="Enviar código de recuperación"
+                android:onClick="SendCodeAccountClicked"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/ButtonAccept"
@@ -141,7 +142,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:freezesText="false"
-                android:text="Aceptar"/>
+                android:text="Aceptar"
+                android:onClick="ChangeAccountClicked"/>
         </LinearLayout>
 
     </LinearLayout>

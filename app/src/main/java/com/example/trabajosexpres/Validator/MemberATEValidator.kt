@@ -6,6 +6,8 @@ import br.com.fluentvalidator.AbstractValidator
 import br.com.fluentvalidator.predicate.LogicalPredicate
 import br.com.fluentvalidator.predicate.ObjectPredicate
 import br.com.fluentvalidator.predicate.StringPredicate
+import br.com.fluentvalidator.predicate.StringPredicate.isDate
+import com.example.trabajosexpres.Model.Account
 import com.example.trabajosexpres.Model.MemberATE
 
 class MemberATEValidator : AbstractValidator<MemberATE> {
@@ -38,7 +40,35 @@ class MemberATEValidator : AbstractValidator<MemberATE> {
             .withMessage("Ingresa un email correcto")
 
         ruleFor(MemberATE::dateBirth)
-            .must(LogicalPredicate.not(ObjectPredicate.nullValue()))
+            .must(isDate("yyyy-MM-dd"))
             .withMessage("Ingresa una fecha correcta")
+
+        ruleFor(MemberATE::username)
+                .must(LogicalPredicate.not(StringPredicate.stringEmptyOrNull()))
+                .withMessage("Ingresa un username correcto")
+                .must(StringPredicate.stringMatches("[A-Za-zñÑáéíóúÁÉÍÓÚ0-9]{5,50}"))
+                .withMessage("Ingresa un username correcto")
+                .must(StringPredicate.stringSizeBetween(5, 50)).`when`(LogicalPredicate.not(StringPredicate.stringEmptyOrNull()))
+                .withMessage("Ingresa un username correcto")
+
+        ruleFor(MemberATE::password)
+                .must(LogicalPredicate.not(StringPredicate.stringEmptyOrNull()))
+                .withMessage("Ingresa una contraseña correcta1")
+                .must(StringPredicate.stringMatches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\$@\$!%*?&#])[A-Za-z\\d\$@\$!%*?&#]{8,15}"))
+                .withMessage("Ingresa una contraseña correcta2")
+                .must(StringPredicate.stringSizeBetween(8, 15)).`when`(LogicalPredicate.not(StringPredicate.stringEmptyOrNull()))
+                .withMessage("Ingresa una contraseña correcta3")
+
+        ruleFor(MemberATE::accountType)
+                .must(LogicalPredicate.not(ObjectPredicate.nullValue()))
+                .withMessage("Ingresa un tipo correcto")
+
+        ruleFor(MemberATE::idCity)
+                .must(LogicalPredicate.not(ObjectPredicate.nullValue()))
+                .withMessage("Ingresa una ciudad correcto")
+
+        ruleFor(MemberATE::memberATEStatus)
+                .must(LogicalPredicate.not(ObjectPredicate.nullValue()))
+                .withMessage("Ingresa una estatus correcto")
     }
 }
