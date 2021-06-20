@@ -5,12 +5,12 @@
     android:layout_height="wrap_content">
     <item
         android:id="@+id/ItemSearch"
-        android:icon="@drawable/shr_search"
+        android:icon="@drawable/search"
         app:showAsAction="always"
         android:title="Buscar" />
     <item
         android:id="@+id/filter"
-        android:icon="@drawable/shr_filter"
+        android:icon="@drawable/filter"
         android:title="Filtro"
         app:showAsAction="always" />
 </menu>

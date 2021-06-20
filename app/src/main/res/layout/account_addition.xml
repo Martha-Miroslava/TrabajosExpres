@@ -187,39 +187,37 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/TextFieldMenuState"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="20dp"
-                android:hint="Estado">
-
+                android:layout_marginEnd="15dp"
+                android:hint ="Estado">
                 <AutoCompleteTextView
+                    android:id="@+id/TextFieldMenuState"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"
-                    android:inputType="none" />
+                    android:inputType="none"
+                    android:text="Veracruz">
+                </AutoCompleteTextView>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/TextFieldMenuCity"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="20dp"
-                android:hint="Ciudad">
-
+                android:layout_marginEnd="15dp"
+                android:hint ="Ciudad">
                 <AutoCompleteTextView
+                    android:id="@+id/TextFieldMenuCity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"
-                    android:inputType="none" />
+                    android:inputType="none"
+                    android:text="Xalapa">
+                </AutoCompleteTextView>
             </com.google.android.material.textfield.TextInputLayout>
 
             <CheckBox
@@ -245,7 +243,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Registrar" />
+                    android:text="Registrar"
+                    android:onClick="registerAccountClicked"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/ButtonCancel"
@@ -254,9 +253,9 @@
                     android:layout_marginLeft="30dp"
                     android:layout_weight="1"
                     android:freezesText="false"
-                    android:text="Cancelar" />
+                    android:text="Cancelar"
+                    android:onClick="BehindClicked"/>
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

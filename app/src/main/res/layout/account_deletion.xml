@@ -21,10 +21,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:logo="@drawable/iconomenu"
-                app:navigationIcon="@drawable/shr_menu"
+                app:navigationIcon="@drawable/menu"
                 app:title="!Bienvenido Usuario X!"
                 app:titleTextAppearance="@style/TextAppearance.AppCompat.Large" />
-
         </com.google.android.material.appbar.AppBarLayout>
 
         <ScrollView
@@ -37,7 +36,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
@@ -45,6 +43,7 @@
                     android:fontFamily="sans-serif"
                     android:text="Eliminar Cuenta"
                     android:textAlignment="center"
+                    android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textColorLink="#FFFFFF"
                     android:textSize="30sp"
@@ -59,6 +58,20 @@
                     android:cropToPadding="true"
                     tools:srcCompat="@tools:sample/avatars" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Nombre: "
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:ems="10"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:typeface="normal">
+                </TextView>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/TextFieldName"
                     android:layout_width="match_parent"
@@ -68,6 +81,20 @@
                     android:layout_marginEnd="15dp"
                     android:ems="10">
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Apellidos: "
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:ems="10"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:typeface="normal">
+                </TextView>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/TextFieldLastName"
@@ -79,6 +106,20 @@
                     android:ems="10">
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Fecha de Nacimiento: "
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:ems="10"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:typeface="normal">
+                </TextView>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/TextFieldDateBirth"
                     android:layout_width="match_parent"
@@ -87,6 +128,20 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="15dp"
                     android:ems="10"></com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Correo: "
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:ems="10"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:typeface="normal">
+                </TextView>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/TextFieldEmail"
@@ -97,6 +152,20 @@
                     android:layout_marginEnd="15dp"
                     android:ems="10"></com.google.android.material.textfield.TextInputLayout>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Ciudad: "
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:ems="10"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:typeface="normal">
+                </TextView>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/TextFieldCity"
                     android:layout_width="match_parent"
@@ -104,6 +173,20 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="15dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Estado: "
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:ems="10"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:typeface="normal">
+                </TextView>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/TextFieldState"
@@ -113,6 +196,20 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="15dp"/>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Usuario: "
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:ems="10"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:typeface="normal">
+                </TextView>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/TextFieldUserName"
                     android:layout_width="match_parent"
@@ -120,6 +217,20 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="15dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Constraseña: "
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:ems="10"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:typeface="normal">
+                </TextView>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/TextFieldPassword"
@@ -157,5 +268,4 @@
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

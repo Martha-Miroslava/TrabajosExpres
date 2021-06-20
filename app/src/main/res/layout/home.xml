@@ -23,7 +23,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:logo="@drawable/iconomenu"
                 app:menu="@menu/top_app_bar"
-                app:navigationIcon="@drawable/shr_menu"
+                app:navigationIcon="@drawable/menu"
                 app:title="!Bienvenido Usuario X!"
                 app:titleTextAppearance="@style/TextAppearance.AppCompat.Small" />
         </com.google.android.material.appbar.AppBarLayout>

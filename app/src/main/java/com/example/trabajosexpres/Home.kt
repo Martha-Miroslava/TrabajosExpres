@@ -7,11 +7,5 @@ class Home: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home)
-
-        /*val miTexto = findViewById<TextView>(R.id.txtTitulo)
-        miTexto.text = "Hola, Bienvenido"
-
-        val miLista = findViewById<ListView>(R.id.listaItems)
-        miLista.adapter = miAdaptadorLista1(this)*/
     }
 }

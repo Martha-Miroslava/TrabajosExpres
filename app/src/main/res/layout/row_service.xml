@@ -49,7 +49,5 @@
                 tools:ignore="MissingConstraints" />
 
         </LinearLayout>
-
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
