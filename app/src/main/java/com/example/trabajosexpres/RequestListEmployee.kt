@@ -91,8 +91,15 @@ class RequestListEmployee: AppCompatActivity(), NavigationView.OnNavigationItemS
                         requestFirstEmployee.putExtra("idCity", intent.getIntExtra("idCity", 0))
                         startActivity(requestFirstEmployee)
                         finish()
+                    }else{
+                        val requestEmployee = Intent(this, RequestEmployee::class.java)
+                        requestEmployee.putExtra("token", intent.getStringExtra("token"))
+                        requestEmployee.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
+                        requestEmployee.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
+                        requestEmployee.putExtra("idCity", intent.getIntExtra("idCity", 0))
+                        startActivity(requestEmployee)
+                        finish()
                     }
-
                 }
             }
             HTTPRequest.isArray = false

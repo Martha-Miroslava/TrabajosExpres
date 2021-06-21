@@ -90,6 +90,7 @@ class RequestFirstEmployee: AppCompatActivity(), NavigationView.OnNavigationItem
     private fun requestErrorListener(): Response.ErrorListener {
         return Response.ErrorListener { error ->
             Log.e("ERROR", error.toString())
+            sendMessage("No se pudo realizar el proceso.Intente más tarde")
         }
     }
 

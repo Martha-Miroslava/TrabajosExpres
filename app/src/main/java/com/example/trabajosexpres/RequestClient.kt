@@ -79,7 +79,7 @@ class RequestClient: AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     url,
                     payload,
                     Response.Listener { response ->
-                        sendMessage("La solicitude se cancelo exitosamente")
+                        sendMessage("La solicitud se cancelo exitosamente")
                         val requestList = Intent(this, RequestList::class.java)
                         requestList.putExtra("token", intent.getStringExtra("token"))
                         requestList.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))

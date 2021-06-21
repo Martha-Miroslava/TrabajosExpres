@@ -63,14 +63,17 @@ class ServiceAddition: AppCompatActivity(), NavigationView.OnNavigationItemSelec
         if(result.isValid){
             HTTPRequest.token = intent.getStringExtra("token").toString()
             val payload = JSONObject()
+            payload.put("idService", serviceToAdd.idService)
             payload.put("name", serviceToAdd.name)
             payload.put("description", serviceToAdd.descriptionService)
             payload.put("slogan", serviceToAdd.slogan)
             payload.put("typeService", serviceToAdd.typeService)
-            payload.put("minimalCost", serviceToAdd.minimalCost)
-            payload.put("maximumCost", serviceToAdd.maximumCost)
+            payload.put("workingHours", serviceToAdd.workingHours)
+            payload.put("minimalCost", 200.50)
+            payload.put("maximumCost", 300.50)
             payload.put("idCity", serviceToAdd.idCity)
             payload.put("idMemberATE", serviceToAdd.idMemberATE)
+            payload.put("serviceStatus", 1)
             val request = HTTPRequest(
                 Request.Method.POST,
                 url,
@@ -114,8 +117,8 @@ class ServiceAddition: AppCompatActivity(), NavigationView.OnNavigationItemSelec
         val workingHours: String = textViewWorkingHours.text.toString()
         return Service(
             0,
-            serviceAdd.idCity,
-            serviceAdd.idMemberATE,
+            1,
+            intent.getIntExtra("idMemberATE",0),
             name,
             minimalCostInt,
             maximumCostInt,
@@ -123,7 +126,7 @@ class ServiceAddition: AppCompatActivity(), NavigationView.OnNavigationItemSelec
             slogan,
             typeService,
             workingHours,
-            serviceAdd.serviceStatus
+            1
         )
     }
 
@@ -166,7 +169,7 @@ class ServiceAddition: AppCompatActivity(), NavigationView.OnNavigationItemSelec
                 finish()
             }
             R.id.ItemEditAccount -> {
-                val accountEdition = Intent(this, AccountEdition::class.java)
+                val accountEdition = Intent(this, AccountEditionEmployee::class.java)
                 accountEdition.putExtra("token", intent.getStringExtra("token"))
                 accountEdition.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
                 accountEdition.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
@@ -175,7 +178,7 @@ class ServiceAddition: AppCompatActivity(), NavigationView.OnNavigationItemSelec
                 finish()
             }
             R.id.ItemRequestsReceived -> {
-                val requestList = Intent(this, RequestList::class.java)
+                val requestList = Intent(this, RequestListEmployee::class.java)
                 requestList.putExtra("token", intent.getStringExtra("token"))
                 requestList.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
                 requestList.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
@@ -185,7 +188,7 @@ class ServiceAddition: AppCompatActivity(), NavigationView.OnNavigationItemSelec
             }
 
             R.id.ItemRegisterService -> {
-                val registerService = Intent(this, RequestList::class.java)
+                val registerService = Intent(this, ServiceAddition::class.java)
                 registerService.putExtra("token", intent.getStringExtra("token"))
                 registerService.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
                 registerService.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
