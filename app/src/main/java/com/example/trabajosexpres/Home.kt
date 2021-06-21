@@ -82,6 +82,7 @@ class Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener
     private fun requestErrorListener(): Response.ErrorListener {
         return Response.ErrorListener { error ->
             Log.e("ERROR", error.toString())
+            HTTPRequest.isArray = false
         }
     }
 

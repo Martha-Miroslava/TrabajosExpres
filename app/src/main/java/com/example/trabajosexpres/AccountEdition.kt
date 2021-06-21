@@ -50,10 +50,18 @@ class AccountEdition: AppCompatActivity(), NavigationView.OnNavigationItemSelect
     fun behindClicked(vew: View){
         if(intent.getStringExtra("memberATEType").toString().equals("2")){
             val home = Intent(this, HomeEmployee::class.java)
+            home.putExtra("token", intent.getStringExtra("token"))
+            home.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
+            home.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
+            home.putExtra("idCity", intent.getIntExtra("idCity", 0))
             startActivity(home)
             finish()
         }else{
             val home = Intent(this, Home::class.java)
+            home.putExtra("token", intent.getStringExtra("token"))
+            home.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
+            home.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
+            home.putExtra("idCity", intent.getIntExtra("idCity", 0))
             startActivity(home)
             finish()
         }
