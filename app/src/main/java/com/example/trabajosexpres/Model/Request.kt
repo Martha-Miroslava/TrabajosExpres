@@ -22,6 +22,7 @@ package com.example.trabajosexpres.Model
  */
 data class Request (
 
+        val idRequest: Int ,
         /* client address */
         val address: kotlin.String,
         /* Date the service is to be performed */
@@ -32,5 +33,6 @@ data class Request (
         val time: kotlin.String,
         /* problem to solve */
         val trouble: kotlin.String,
-        val idMemberATE: Int
+        val idMemberATE: Int,
+        val idService: Int
 )
