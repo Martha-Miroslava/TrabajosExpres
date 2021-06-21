@@ -84,7 +84,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:text="Apellidos: "
+                    android:text="Direccion: "
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="15dp"
                     android:ems="10"
