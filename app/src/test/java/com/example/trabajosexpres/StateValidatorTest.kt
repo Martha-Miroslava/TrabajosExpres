@@ -15,7 +15,7 @@ class StateValidatorTest {
     fun state_isCorrect() {
         /*The name of a state does not accept numbers*/
         val stateValidator = StateValidator()
-        val state = State(1,"Veracruz")
+        val state = State(1,"Veracruz",1)
         val validate: ValidationResult = stateValidator.validate(state)
         assertTrue(validate.isValid)
         assertThat(validate.getErrors().size, equalTo(0));
@@ -24,7 +24,7 @@ class StateValidatorTest {
     @Test
     fun nameWithSpaces_isIncorrect() {
         val stateValidator = StateValidator()
-        val state = State(1,"                   ")
+        val state = State(1,"                   ",0)
         val validate: ValidationResult = stateValidator.validate(state)
         assertFalse(validate.isValid)
         assertThat(validate.getErrors().size, equalTo(1));
@@ -33,7 +33,7 @@ class StateValidatorTest {
     @Test
     fun emptyName_isIncorrect() {
         val stateValidator = StateValidator()
-        val state = State(1,"")
+        val state = State(1,"",0)
         val validate: ValidationResult = stateValidator.validate(state)
         assertFalse(validate.isValid)
         assertThat(validate.getErrors().size, equalTo(2));

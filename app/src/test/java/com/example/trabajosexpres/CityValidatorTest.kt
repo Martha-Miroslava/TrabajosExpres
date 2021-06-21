@@ -22,7 +22,7 @@ class CityValidatorTest {
     fun city_isCorrect() {
         /*The name of a city does not accept numbers*/
         val cityValidator = CityValidator()
-        val state = State(1,"Veracruz")
+        val state = State(1,"Veracruz",0)
         val city = City(1,"Xalapa", state)
         val validate: ValidationResult = cityValidator.validate(city)
         assertTrue(validate.isValid)
@@ -32,7 +32,7 @@ class CityValidatorTest {
     @Test
     fun nameWithSpaces_isIncorrect() {
         val cityValidator = CityValidator()
-        val state = State(1,"Veracruz")
+        val state = State(1,"Veracruz",1)
         val city = City(1,"                           ",state)
         val validate: ValidationResult = cityValidator.validate(city)
         assertFalse(validate.isValid)

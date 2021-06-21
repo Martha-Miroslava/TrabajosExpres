@@ -14,9 +14,9 @@ class ServiceValidatorTest {
     @Test
     fun service_isCorrect() {
         val serviceValidator = ServiceValidator()
-        val service = Service(1,null,null,null,null,"Sevicio estrella",
-                Cost(null, BigDecimal.valueOf(100), Cost.Currency.MXN), Cost(null,BigDecimal.valueOf(100), Cost.Currency.MXN), "Rapido servicio",
-                "Servicio de calidad", "Plomeria","Lunes a viernes a las 8:00 am", Service.ServiceStatus.ACTIVE)
+        val service = Service(1,1,1,"Sevicio estrella",100.toDouble(),
+                150.toDouble(), "Rapido servicio",
+                "Servicio de calidad", "Plomeria","Lunes a viernes a las 8:00 am", 1)
         val validate: ValidationResult = serviceValidator.validate(service)
         Assert.assertTrue(validate.isValid)
         org.junit.Assert.assertThat(validate.getErrors().size, IsEqual.equalTo(0));
@@ -25,9 +25,9 @@ class ServiceValidatorTest {
     @Test
     fun service_isIncorrect() {
         val serviceValidator = ServiceValidator()
-        val service = Service(1,null,null,null,null,"",
-                Cost(null, BigDecimal.valueOf(100), Cost.Currency.MXN), Cost(null,BigDecimal.valueOf(100), Cost.Currency.MXN), "",
-                "", "","", Service.ServiceStatus.ACTIVE)
+        val service = Service(1,1,1,"",100.toDouble(),
+                150.toDouble(), "",
+                "", "","", 1)
         val validate: ValidationResult = serviceValidator.validate(service)
         Assert.assertFalse(validate.isValid)
         org.junit.Assert.assertThat(validate.getErrors().size, IsEqual.equalTo(9));
