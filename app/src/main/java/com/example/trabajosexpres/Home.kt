@@ -88,12 +88,12 @@ class Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener
                 if(positionRow>=0 && positionRow< listService.size){
                     Home.service = listService.get(positionRow)
                     Home.position = positionRow
-                    val requestClient = Intent(this, RequestClient::class.java)
-                    requestClient.putExtra("token", intent.getStringExtra("token"))
-                    requestClient.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
-                    requestClient.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
-                    requestClient.putExtra("idCity", intent.getIntExtra("idCity", 0))
-                    startActivity(requestClient)
+                    val requestAddition = Intent(this, RequestAddition::class.java)
+                    requestAddition.putExtra("token", intent.getStringExtra("token"))
+                    requestAddition.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
+                    requestAddition.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
+                    requestAddition.putExtra("idCity", intent.getIntExtra("idCity", 0))
+                    startActivity(requestAddition)
                     finish()
                 }
             }
