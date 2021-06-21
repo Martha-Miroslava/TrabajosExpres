@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.Response
 import com.example.trabajosexpres.HTTPRequest.HTTPRequest
-import com.example.trabajosexpres.Model.CodeConfirmation
 import com.example.trabajosexpres.Volley.VolleySingleton
 import org.json.JSONObject
 

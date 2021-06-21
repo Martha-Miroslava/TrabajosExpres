@@ -3,33 +3,41 @@ package com.example.trabajosexpres
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.ListView
-import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
-import br.com.fluentvalidator.Validator
-import br.com.fluentvalidator.context.ValidationResult
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.android.volley.Request
 import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
 import com.example.trabajosexpres.Adpater.AdapterService
 import com.example.trabajosexpres.HTTPRequest.HTTPRequest
 import com.example.trabajosexpres.Model.Service
 import com.example.trabajosexpres.Volley.VolleySingleton
-import com.google.android.material.appbar.MaterialToolbar
-import org.json.JSONArray
+import com.google.android.material.navigation.NavigationView
 import org.json.JSONObject
-import java.io.Console
 
-class Home: AppCompatActivity() {
+class Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     var listService: MutableList<Service> = mutableListOf()
+    lateinit var drawerLayout: DrawerLayout
+    lateinit var navigationView: NavigationView
+    lateinit var toolbar:Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home)
         getService()
-        val title = findViewById<MaterialToolbar>(R.id.TopAppBar)
-        title.title = "!Bienvenido Usuario "+Login.getUsername()+" !"
+        drawerLayout = findViewById(R.id.drawer_layout)
+        navigationView = findViewById(R.id.NavegationViewUser)
+        toolbar = findViewById(R.id.toolbarClient)
+        toolbar.title = "!Bienvenido Usuario "+Login.getUsername()+" !"
+        setSupportActionBar(toolbar)
+        navigationView.setNavigationItemSelectedListener(this)
     }
+
+
 
     fun getService() {
         val url = "http://10.0.2.2:5000/services/city/1"
@@ -67,6 +75,7 @@ class Home: AppCompatActivity() {
             }
             val list = findViewById<ListView>(R.id.ListViewService)
             list.adapter = AdapterService(this,listService)
+            HTTPRequest.isArray = false
         }
     }
 
@@ -75,4 +84,43 @@ class Home: AppCompatActivity() {
             Log.e("ERROR", error.toString())
         }
     }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        selectItemNavigation(item)
+        return true
+    }
+
+    private fun selectItemNavigation(item: MenuItem){
+        val fragment:FragmentManager = getSupportFragmentManager()
+        val fragmentTransaction: FragmentTransaction = fragment.beginTransaction()
+        when(item.itemId){
+            R.id.ItemLogout-> {
+                val login = Intent(this, Login::class.java)
+                startActivity(login)
+                finish()
+            }
+            R.id.ItemEditAccount ->{
+                val accountEdition = Intent(this, AccountEdition::class.java)
+                startActivity(accountEdition)
+                finish()
+            }
+            R.id.ItemRequests ->{
+                val requestClient = Intent(this, RequestClient::class.java)
+                startActivity(requestClient)
+                finish()
+            }
+            R.id.ItemActiviteAccount ->{
+                val login = Intent(this, Login::class.java)
+                startActivity(login)
+                finish()
+            }
+            R.id.ItemCommet ->{
+                val login = Intent(this, Login::class.java)
+                startActivity(login)
+                finish()
+            }
+        }
+    }
 }
+
+

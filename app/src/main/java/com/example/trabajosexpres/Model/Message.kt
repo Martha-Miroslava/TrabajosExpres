@@ -19,8 +19,8 @@ package com.example.trabajosexpres.Model
  */
 data class Message (
 
-        val service: Service,
-        val owner: Account,
+        val idService: Int,
+        val idAccount: Int,
         /* message of Service or MemberATE */
         val message: kotlin.String? = null
 ) {
