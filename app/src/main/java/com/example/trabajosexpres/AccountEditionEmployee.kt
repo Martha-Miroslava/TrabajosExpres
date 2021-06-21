@@ -48,27 +48,17 @@ class AccountEditionEmployee: AppCompatActivity(), NavigationView.OnNavigationIt
     }
 
     fun behindClicked(vew: View){
-        if(intent.getStringExtra("memberATEType").toString().equals("2")){
-            val home = Intent(this, HomeEmployee::class.java)
-            home.putExtra("token", intent.getStringExtra("token"))
-            home.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
-            home.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
-            home.putExtra("idCity", intent.getIntExtra("idCity", 0))
-            startActivity(home)
-            finish()
-        }else{
-            val home = Intent(this, Home::class.java)
-            home.putExtra("token", intent.getStringExtra("token"))
-            home.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
-            home.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
-            home.putExtra("idCity", intent.getIntExtra("idCity", 0))
-            startActivity(home)
-            finish()
-        }
+        val home = Intent(this, HomeEmployee::class.java)
+        home.putExtra("token", intent.getStringExtra("token"))
+        home.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
+        home.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
+        home.putExtra("idCity", intent.getIntExtra("idCity", 0))
+        startActivity(home)
+        finish()
     }
 
     fun deleteClicked(vew: View){
-        val accountDeletion = Intent(this, AccountDeletion::class.java)
+        val accountDeletion = Intent(this, AccountEditionEmployee::class.java)
         accountDeletion.putExtra("token", intent.getStringExtra("token"))
         accountDeletion.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
         accountDeletion.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
@@ -78,7 +68,7 @@ class AccountEditionEmployee: AppCompatActivity(), NavigationView.OnNavigationIt
     }
 
     fun chagePasswordClicked(vew: View){
-        val passwordChange = Intent(this, PasswordChange::class.java)
+        val passwordChange = Intent(this, ChangePasswordEmployee::class.java)
         passwordChange.putExtra("token", intent.getStringExtra("token"))
         passwordChange.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
         passwordChange.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
@@ -122,7 +112,7 @@ class AccountEditionEmployee: AppCompatActivity(), NavigationView.OnNavigationIt
                     Response.Listener { response ->
                         memberATE=memberATEEdit
                         sendMessage("La cuenta se modifico exitosamente")
-                        val home = Intent(this, Home::class.java)
+                        val home = Intent(this, HomeEmployee::class.java)
                         home.putExtra("token", intent.getStringExtra("token"))
                         home.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
                         home.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
@@ -204,8 +194,8 @@ class AccountEditionEmployee: AppCompatActivity(), NavigationView.OnNavigationIt
         val fragment: FragmentManager = getSupportFragmentManager()
         val fragmentTransaction: FragmentTransaction = fragment.beginTransaction()
         when(item.itemId) {
-            R.id.ItemHome -> {
-                val home = Intent(this, Home::class.java)
+            R.id.ItemHomeEmployee -> {
+                val home = Intent(this, HomeEmployee::class.java)
                 home.putExtra("token", intent.getStringExtra("token"))
                 home.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
                 home.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
@@ -227,13 +217,22 @@ class AccountEditionEmployee: AppCompatActivity(), NavigationView.OnNavigationIt
                 startActivity(accountEdition)
                 finish()
             }
-            R.id.ItemRequests -> {
-                val requestList = Intent(this, RequestList::class.java)
+            R.id.ItemRequestsReceived -> {
+                val requestList = Intent(this, RequestListEmployee::class.java)
                 requestList.putExtra("token", intent.getStringExtra("token"))
                 requestList.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
                 requestList.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
                 requestList.putExtra("idCity", intent.getIntExtra("idCity", 0))
                 startActivity(requestList)
+                finish()
+            }
+            R.id.ItemRegisterService -> {
+                val serviceAddition = Intent(this, ServiceAddition::class.java)
+                serviceAddition.putExtra("token", intent.getStringExtra("token"))
+                serviceAddition.putExtra("memberATEType", intent.getIntExtra("memberATEType",0))
+                serviceAddition.putExtra("idMemberATE", intent.getIntExtra("idMemberATE",0))
+                serviceAddition.putExtra("idCity", intent.getIntExtra("idCity",0))
+                startActivity(serviceAddition)
                 finish()
             }
         }
