@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout_edition_account"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar_employee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </FrameLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="#000000"
+                    android:fontFamily="sans-serif"
+                    android:text="Editar Cuenta"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:ems="10"
+                            android:hint="Nombre"
+                            app:counterEnabled="true"
+                            app:counterMaxLength="150"
+                            app:errorEnabled="false"
+                            app:helperText="Caracteres a-z"
+                            app:helperTextEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/TextFieldName"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginEnd="15dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="15dp"
+                            android:ems="10"
+                            android:hint="Apellidos"
+                            app:counterEnabled="true"
+                            app:counterMaxLength="150"
+                            app:errorEnabled="false"
+                            app:helperText="Caracteres a-z"
+                            app:helperTextEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/TextFieldLastName"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="15dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="15dp"
+                            android:ems="10"
+                            android:hint="Fecha de Nacimiento"
+                            app:errorEnabled="false">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/TextFieldDateBirth"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="15dp"
+                                android:inputType="date" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="215dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="20dp"
+                            android:ems="10"
+                            android:hint="Correo"
+                            app:counterEnabled="true"
+                            app:counterMaxLength="254"
+                            app:errorEnabled="false"
+                            app:helperText="Caracteres a-z/9-0#@_"
+                            app:helperTextEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/TextFieldEmail"
+                                android:layout_width="215dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="20dp"
+                                android:inputType="textEmailAddress" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="215dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="20dp"
+                            android:ems="10"
+                            android:hint="Nombre de usuario"
+                            app:counterEnabled="true"
+                            app:counterMaxLength="20"
+                            app:errorEnabled="false"
+                            app:helperText="Caracteres a-z/9-0"
+                            app:helperTextEnabled="true">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/TextFieldUserName"
+                                android:layout_width="215dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginTop="20dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="100dp"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/ButtonDelete"
+                            style="@style/Widget.MaterialComponents.Button.Icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="40dp"
+                            android:text="Eliminar"
+                            app:icon="@drawable/delete"
+                            android:onClick="deleteClicked"/>
+
+                        <Button
+                            android:id="@+id/ButtonChangePassword"
+                            style="@style/Widget.MaterialComponents.Button.Icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:text="Cambiar contraseña"
+                            android:textSize="11sp"
+                            app:icon="@drawable/password"
+                            android:onClick="chagePasswordClicked"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="50dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/ButtonSave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Guardar"
+                        android:onClick="updtaeAccount"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/ButtonCancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:freezesText="false"
+                        android:text="Cancelar"
+                        android:onClick="behindClicked"/>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/NavegationViewUser"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu_employee"
+        />
+</androidx.drawerlayout.widget.DrawerLayout>
