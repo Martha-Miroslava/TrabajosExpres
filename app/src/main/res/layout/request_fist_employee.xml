@@ -203,11 +203,12 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/ButtonAcept"
+                        android:id="@+id/ButtonAccept"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Aceptar" />
+                        android:text="Aceptar"
+                        android:onClick="acceptRequestClicked"/>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/ButtonReject"
@@ -216,7 +217,8 @@
                         android:layout_marginLeft="30dp"
                         android:layout_weight="1"
                         android:freezesText="false"
-                        android:text="Rechazar" />
+                        android:text="Rechazar"
+                        android:onClick="rejectRequestClicked"/>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
