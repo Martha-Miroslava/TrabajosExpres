@@ -1,7 +1,6 @@
 package com.example.trabajosexpres
 
 import br.com.fluentvalidator.context.ValidationResult
-import com.example.trabajosexpres.Model.MemberATE
 import com.example.trabajosexpres.Model.Request
 import com.example.trabajosexpres.Validator.RequestValidator
 import junit.framework.Assert
