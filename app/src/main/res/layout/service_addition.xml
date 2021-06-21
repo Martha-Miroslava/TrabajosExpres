@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout_add_service"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
@@ -10,21 +11,15 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.google.android.material.appbar.AppBarLayout
+        <include
+            layout="@layout/toolbar_employee"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="MissingConstraints">
+            android:layout_height="wrap_content"/>
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/TopAppBar"
-                style="@style/Widget.MaterialComponents.Toolbar.Primary"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:logo="@drawable/iconomenu"
-                app:navigationIcon="@drawable/menu"
-                app:title="!Bienvenido Usuario X!"
-                app:titleTextAppearance="@style/TextAppearance.AppCompat.Large" />
-        </com.google.android.material.appbar.AppBarLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </FrameLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -295,5 +290,11 @@
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/NavegationViewUser"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu_employee"
+        />
+</androidx.drawerlayout.widget.DrawerLayout>
