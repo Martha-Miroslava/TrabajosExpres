@@ -101,6 +101,10 @@ class Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener
             }
             R.id.ItemEditAccount ->{
                 val accountEdition = Intent(this, AccountEdition::class.java)
+                accountEdition.putExtra("token", intent.getStringExtra("token"))
+                accountEdition.putExtra("memberATEType", intent.getIntExtra("memberATEType",0))
+                accountEdition.putExtra("idMemberATE", intent.getIntExtra("idMemberATE",0))
+                accountEdition.putExtra("idCity", intent.getIntExtra("idCity",0))
                 startActivity(accountEdition)
                 finish()
             }
