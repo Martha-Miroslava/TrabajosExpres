@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <includes
+        <include
             layout="@layout/toolbar_employee"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -56,34 +56,7 @@
                         android:layout_marginStart="15dp"
                         android:layout_marginBottom="15dp"
                         android:adjustViewBounds="false"
-                        android:cropToPadding="true"
-                        tools:srcCompat="@tools:sample/avatars" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="80dp"
-                        android:layout_marginTop="40dp"
-                        android:orientation="vertical">
-
-                        <Button
-                            android:id="@+id/ButtonEdit"
-                            style="@style/Widget.MaterialComponents.Button.Icon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="30dp"
-                            android:text="Editar"
-                            app:icon="@drawable/edit" />
-
-                        <Button
-                            android:id="@+id/ButtonDelete"
-                            style="@style/Widget.MaterialComponents.Button.Icon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Eliminar"
-                            app:icon="@drawable/delete" />
-
-                    </LinearLayout>
+                        android:cropToPadding="true" />
                 </LinearLayout>
 
                 <TextView
@@ -106,7 +79,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"/>
+                    android:layout_marginEnd="15dp"
+                    android:textSize="18sp"
+                    android:typeface="normal"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -128,7 +103,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"/>
+                    android:layout_marginEnd="15dp"
+                    android:textSize="18sp"
+                    android:typeface="normal"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -150,7 +127,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"/>
+                    android:layout_marginEnd="15dp"
+                    android:textSize="18sp"
+                    android:typeface="normal"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -172,7 +151,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"/>
+                    android:layout_marginEnd="15dp"
+                    android:textSize="18sp"
+                    android:typeface="normal"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -194,7 +175,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"/>
+                    android:layout_marginEnd="15dp"
+                    android:textSize="18sp"
+                    android:typeface="normal"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -216,7 +199,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"/>
+                    android:layout_marginEnd="15dp"
+                    android:textSize="18sp"
+                    android:typeface="normal"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -238,7 +223,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"/>
+                    android:layout_marginEnd="15dp"
+                    android:textSize="18sp"
+                    android:typeface="normal"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -252,6 +239,7 @@
                     android:textStyle="bold"
                     android:textSize="15sp"
                     android:typeface="normal">
+                    >
                 </TextView>
 
                 <TextView
@@ -260,7 +248,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="15dp"/>
+                    android:layout_marginEnd="15dp"
+                    android:textSize="18sp"
+                    android:typeface="normal"/>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

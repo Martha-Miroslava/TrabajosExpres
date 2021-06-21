@@ -92,7 +92,7 @@ class HomeEmployee : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 				if(positionRow>=0 && positionRow< listService.size){
 					Home.service = listService.get(positionRow)
 					Home.position = positionRow
-					val serviceEmployee = Intent(this, ServiceEmployee::class.java)
+					val serviceEmployee = Intent(this, ServiceEmployeeConsult::class.java)
 					serviceEmployee.putExtra("token", intent.getStringExtra("token"))
 					serviceEmployee.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
 					serviceEmployee.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
