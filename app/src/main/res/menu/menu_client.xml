@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/ItemLogout"
+            android:icon="@drawable/ic_action_logout"
+            android:title="Cerrar sesión"
+            app:showAsAction="withText" />
+        <item
+            android:id="@+id/ItemHome"
+            android:icon="@drawable/ic_action_home"
+            android:title="Inicio"
+            app:showAsAction="withText" />
+        <item
+            android:id="@+id/ItemEditAccount"
+            android:icon="@drawable/ic_action_edit_account"
+            android:title="Editar cuenta"
+            app:showAsAction="withText" />
+        <item
+            android:id="@+id/ItemRequests"
+            android:icon="@drawable/ic_action_request"
+            android:title="Solicitudes Enviadas"
+            app:showAsAction="withText" />
+        <item
+            android:id="@+id/ItemActiviteAccount"
+            android:icon="@drawable/ic_action_active_work"
+            android:title="Activar de Empleado"
+            app:showAsAction="withText" />
+        <item
+            android:id="@+id/ItemCommet"
+            android:icon="@drawable/ic_action_comment"
+            android:title="Comentarios"
+            app:showAsAction="withText" />
+    </group>
+</menu>

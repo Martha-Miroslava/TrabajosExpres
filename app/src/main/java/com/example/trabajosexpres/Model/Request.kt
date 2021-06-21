@@ -25,23 +25,12 @@ data class Request (
         /* client address */
         val address: kotlin.String,
         /* Date the service is to be performed */
-        val date: java.time.LocalDate,
+        val date: String,
         /* status of request */
-        val requestStatus: Request.RequestStatus,
+        val requestStatus: Int,
         /* Time the service is to be performed */
         val time: kotlin.String,
         /* problem to solve */
         val trouble: kotlin.String,
-        val memberATE: MemberATE
-) {
-    /**
-     * status of request
-     * Values: ACCEPTED,REJECTED,REQUEST,CENCELLED
-     */
-    enum class RequestStatus(val value: kotlin.String){
-        ACCEPTED("Accepted"),
-        REJECTED("Rejected"),
-        REQUEST("Request"),
-        CENCELLED("Cencelled");
-    }
-}
+        val idMemberATE: Int
+)

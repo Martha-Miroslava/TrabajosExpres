@@ -26,6 +26,7 @@ class AccountAddition: AppCompatActivity() {
     private fun requestErrorListener(): Response.ErrorListener {
         return Response.ErrorListener { error ->
             Log.e("ERROR", error.toString())
+            sendMessage("No se pudo crear la cuenta intente más tarde")
         }
     }
 
@@ -97,7 +98,7 @@ class AccountAddition: AppCompatActivity() {
         val lastname: String = textViewLastName.text.toString()
         val email: String = textViewEmail.text.toString()
         val date: String = textViewDateBith.text.toString()
-        val memberATE = MemberATE(null, email, date, lastname, name, userName, password, 1,idCity, 1)
+        val memberATE = MemberATE(0, email, date, lastname, name, userName, password, 1,idCity, 1)
         return memberATE
     }
     private fun sendMessage(message: String) {

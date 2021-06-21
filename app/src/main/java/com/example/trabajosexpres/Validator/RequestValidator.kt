@@ -28,9 +28,7 @@ class RequestValidator : AbstractValidator<Request> {
                 .withMessage("Ingresa una dirección correcta")
 
         ruleFor(Request::date)
-                .must(LogicalPredicate.not(ObjectPredicate.nullValue()))
-                .withMessage("Ingresa una fecha correcta")
-                .must(localDateAfterOrEqual(currentDate))
+                .must(StringPredicate.stringMatches("([12]\\d{3}/(0[1-9]|1[0-2])/(0[1-9]|[12]\\d|3[01]))"))
                 .withMessage("Ingresa una fecha correcta")
 
         ruleFor(Request::requestStatus)
