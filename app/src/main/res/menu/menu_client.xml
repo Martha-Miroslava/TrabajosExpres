@@ -28,10 +28,5 @@
             android:icon="@drawable/ic_action_active_work"
             android:title="Activar de Empleado"
             app:showAsAction="withText" />
-        <item
-            android:id="@+id/ItemCommet"
-            android:icon="@drawable/ic_action_comment"
-            android:title="Comentarios"
-            app:showAsAction="withText" />
     </group>
 </menu>

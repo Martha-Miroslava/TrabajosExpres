@@ -14,6 +14,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.example.trabajosexpres.Adpater.AdapterService
 import com.example.trabajosexpres.HTTPRequest.HTTPRequest
+import com.example.trabajosexpres.Model.RequestSent
 import com.example.trabajosexpres.Model.Service
 import com.example.trabajosexpres.Volley.VolleySingleton
 import com.google.android.material.navigation.NavigationView
@@ -24,6 +25,14 @@ class Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener
     lateinit var drawerLayout: DrawerLayout
     lateinit var navigationView: NavigationView
     lateinit var toolbar:Toolbar
+    companion object {
+        lateinit var service: Service
+        fun getServiceMember(): Service { return service }
+        fun setServiceMember(newService: Service) { service = newService }
+        var position: Int = 0
+        fun getPositionRow(): Int { return position }
+        fun setPositionRow(positionRow: Int) { position = positionRow }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +65,6 @@ class Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener
     private fun requestListener(): Response.Listener<JSONObject>{
         return Response.Listener {
             for (i in 0..it.length()-3){
-                //println(it.get(i.toString()))
                 val json:JSONObject = it.get(i.toString()) as JSONObject
                 val idService:Int = json.get("idService") as Int
                 val idCity:Int = json.get("idCity") as Int
@@ -76,6 +84,19 @@ class Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener
             val list = findViewById<ListView>(R.id.ListViewService)
             list.adapter = AdapterService(this,listService)
             HTTPRequest.isArray = false
+            list.setOnItemClickListener{parent, view, positionRow, id ->
+                if(positionRow>=0 && positionRow< listService.size){
+                    Home.service = listService.get(positionRow)
+                    Home.position = positionRow
+                    val requestClient = Intent(this, RequestClient::class.java)
+                    requestClient.putExtra("token", intent.getStringExtra("token"))
+                    requestClient.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
+                    requestClient.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
+                    requestClient.putExtra("idCity", intent.getIntExtra("idCity", 0))
+                    startActivity(requestClient)
+                    finish()
+                }
+            }
         }
     }
 
@@ -116,20 +137,6 @@ class Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener
                 requestList.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
                 requestList.putExtra("idCity", intent.getIntExtra("idCity", 0))
                 startActivity(requestList)
-                finish()
-            }
-            R.id.ItemActiviteAccount -> {
-                val activeAccount = Intent(this, ActiveAccount::class.java)
-                activeAccount.putExtra("token", intent.getStringExtra("token"))
-                activeAccount.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
-                activeAccount.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
-                activeAccount.putExtra("idCity", intent.getIntExtra("idCity", 0))
-                startActivity(activeAccount)
-                finish()
-            }
-            R.id.ItemCommet ->{
-                val login = Intent(this, Login::class.java)
-                startActivity(login)
                 finish()
             }
         }

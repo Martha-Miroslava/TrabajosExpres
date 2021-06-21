@@ -14,9 +14,9 @@
 
 
         <ImageView
-            android:id="@+id/ImageViewUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/ImageViewService"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
             android:contentDescription="string/todo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
