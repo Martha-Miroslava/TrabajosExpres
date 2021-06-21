@@ -1,7 +1,6 @@
 package com.example.trabajosexpres
 
 import android.content.Intent
-import android.content.pm.ChangedPackages
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -62,12 +61,20 @@ class AccountEdition: AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
     fun deleteClicked(vew: View){
         val accountDeletion = Intent(this, AccountDeletion::class.java)
+        accountDeletion.putExtra("token", intent.getStringExtra("token"))
+        accountDeletion.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
+        accountDeletion.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
+        accountDeletion.putExtra("idCity", intent.getIntExtra("idCity", 0))
         startActivity(accountDeletion)
         finish()
     }
 
     fun chagePasswordClicked(vew: View){
         val passwordChange = Intent(this, PasswordChange::class.java)
+        passwordChange.putExtra("token", intent.getStringExtra("token"))
+        passwordChange.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
+        passwordChange.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
+        passwordChange.putExtra("idCity", intent.getIntExtra("idCity", 0))
         startActivity(passwordChange)
         finish()
     }
@@ -200,10 +207,6 @@ class AccountEdition: AppCompatActivity(), NavigationView.OnNavigationItemSelect
             }
             R.id.ItemLogout -> {
                 val login = Intent(this, Login::class.java)
-                login.putExtra("token", intent.getStringExtra("token"))
-                login.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
-                login.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
-                login.putExtra("idCity", intent.getIntExtra("idCity", 0))
                 startActivity(login)
                 finish()
             }
@@ -226,12 +229,12 @@ class AccountEdition: AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 finish()
             }
             R.id.ItemActiviteAccount -> {
-                val login = Intent(this, Login::class.java)
-                login.putExtra("token", intent.getStringExtra("token"))
-                login.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
-                login.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
-                login.putExtra("idCity", intent.getIntExtra("idCity", 0))
-                startActivity(login)
+                val activeAccount = Intent(this, ActiveAccount::class.java)
+                activeAccount.putExtra("token", intent.getStringExtra("token"))
+                activeAccount.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
+                activeAccount.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
+                activeAccount.putExtra("idCity", intent.getIntExtra("idCity", 0))
+                startActivity(activeAccount)
                 finish()
             }
             R.id.ItemCommet -> {

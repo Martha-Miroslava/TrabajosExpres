@@ -3,17 +3,12 @@ package com.example.trabajosexpres
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
-import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
-import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.Response
 import com.example.trabajosexpres.HTTPRequest.HTTPRequest
-import com.example.trabajosexpres.Model.CodeConfirmation
-import com.example.trabajosexpres.Model.MemberATE
-import com.example.trabajosexpres.Validator.MemberATEValidator
 import com.example.trabajosexpres.Volley.VolleySingleton
 import org.json.JSONObject
 

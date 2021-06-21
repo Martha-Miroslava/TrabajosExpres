@@ -108,14 +108,22 @@ class Home: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener
                 startActivity(accountEdition)
                 finish()
             }
-            R.id.ItemRequests ->{
-                val requestClient = Intent(this, RequestClient::class.java)
-                startActivity(requestClient)
+            R.id.ItemRequests -> {
+                val requestList = Intent(this, RequestList::class.java)
+                requestList.putExtra("token", intent.getStringExtra("token"))
+                requestList.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
+                requestList.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
+                requestList.putExtra("idCity", intent.getIntExtra("idCity", 0))
+                startActivity(requestList)
                 finish()
             }
-            R.id.ItemActiviteAccount ->{
-                val login = Intent(this, Login::class.java)
-                startActivity(login)
+            R.id.ItemActiviteAccount -> {
+                val activeAccount = Intent(this, ActiveAccount::class.java)
+                activeAccount.putExtra("token", intent.getStringExtra("token"))
+                activeAccount.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
+                activeAccount.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
+                activeAccount.putExtra("idCity", intent.getIntExtra("idCity", 0))
+                startActivity(activeAccount)
                 finish()
             }
             R.id.ItemCommet ->{
