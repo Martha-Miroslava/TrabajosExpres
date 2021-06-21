@@ -83,13 +83,16 @@ class RequestListEmployee: AppCompatActivity(), NavigationView.OnNavigationItemS
                 if(positionRow>=0 && positionRow< listRequest.size){
                     RequestListEmployee.request = listRequest.get(positionRow)
                     RequestListEmployee.position = positionRow
-                    /*val requestClient = Intent(this, RequestClient::class.java)
-                    requestClient.putExtra("token", intent.getStringExtra("token"))
-                    requestClient.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
-                    requestClient.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
-                    requestClient.putExtra("idCity", intent.getIntExtra("idCity", 0))
-                    startActivity(requestClient)
-                    finish()*/
+                    if(listRequest.get(positionRow).requestStatus== 1){
+                        val requestFirstEmployee = Intent(this, RequestFirstEmployee::class.java)
+                        requestFirstEmployee.putExtra("token", intent.getStringExtra("token"))
+                        requestFirstEmployee.putExtra("memberATEType", intent.getIntExtra("memberATEType", 0))
+                        requestFirstEmployee.putExtra("idMemberATE", intent.getIntExtra("idMemberATE", 0))
+                        requestFirstEmployee.putExtra("idCity", intent.getIntExtra("idCity", 0))
+                        startActivity(requestFirstEmployee)
+                        finish()
+                    }
+
                 }
             }
             HTTPRequest.isArray = false
