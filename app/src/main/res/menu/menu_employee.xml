@@ -9,7 +9,7 @@
             android:title="Cerrar sesión"
             app:showAsAction="withText" />
         <item
-            android:id="@+id/ItemHome"
+            android:id="@+id/ItemHomeEmployee"
             android:icon="@drawable/ic_action_home"
             android:title="Inicio"
             app:showAsAction="withText" />
@@ -19,19 +19,14 @@
             android:title="Editar cuenta"
             app:showAsAction="withText" />
         <item
-            android:id="@+id/ItemRequests"
+            android:id="@+id/ItemRequestsReceived"
             android:icon="@drawable/ic_action_request"
-            android:title="Solicitudes Enviadas"
+            android:title="Solicitudes Recibidas"
             app:showAsAction="withText" />
         <item
-            android:id="@+id/ItemActiviteAccount"
-            android:icon="@drawable/ic_action_active_work"
-            android:title="Activar de Empleado"
-            app:showAsAction="withText" />
-        <item
-            android:id="@+id/ItemCommet"
-            android:icon="@drawable/ic_action_comment"
-            android:title="Comentarios"
+            android:id="@+id/ItemRegisterService"
+            android:icon="@drawable/ic_action_service"
+            android:title="Registrar servicio"
             app:showAsAction="withText" />
     </group>
 </menu>

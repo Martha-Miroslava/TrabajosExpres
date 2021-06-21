@@ -23,7 +23,7 @@ package com.example.trabajosexpres.Model
 data class MemberATE (
 
         /* ID of MemberATE */
-        val id: kotlin.Long? = null,
+        val id: Int = 0,
         /* Email of MemberATE */
         val email: kotlin.String,
         /* Date birth of MemberATE */

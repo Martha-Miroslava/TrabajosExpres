@@ -53,11 +53,11 @@ class MemberATEValidator : AbstractValidator<MemberATE> {
 
         ruleFor(MemberATE::password)
                 .must(LogicalPredicate.not(StringPredicate.stringEmptyOrNull()))
-                .withMessage("Ingresa una contraseña correcta1")
+                .withMessage("Ingresa una contraseña correcta")
                 .must(StringPredicate.stringMatches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\$@\$!%*?&#])[A-Za-z\\d\$@\$!%*?&#]{8,15}"))
-                .withMessage("Ingresa una contraseña correcta2")
+                .withMessage("Ingresa una contraseña correcta")
                 .must(StringPredicate.stringSizeBetween(8, 15)).`when`(LogicalPredicate.not(StringPredicate.stringEmptyOrNull()))
-                .withMessage("Ingresa una contraseña correcta3")
+                .withMessage("Ingresa una contraseña correcta")
 
         ruleFor(MemberATE::accountType)
                 .must(LogicalPredicate.not(ObjectPredicate.nullValue()))
