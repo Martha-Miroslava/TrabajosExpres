@@ -96,7 +96,13 @@
                     android:layout_marginLeft="25dp"
                     android:layout_marginTop="20dp"
                     android:text="Iniciar Sesión"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:onClick="LoginClicked"/>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
 
         </LinearLayout>
@@ -114,7 +120,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
-                android:text="Crear cuenta" />
+                android:text="Crear cuenta"
+                android:onClick="registerAccountClicked"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/ButtonRecoverAccount"
@@ -124,7 +131,8 @@
                 android:layout_weight="1"
                 android:freezesText="false"
                 android:text="¿Has olvidado la contraseña?"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                android:onClick="RecoverAccountClicked"/>
         </LinearLayout>
 
     </LinearLayout>
