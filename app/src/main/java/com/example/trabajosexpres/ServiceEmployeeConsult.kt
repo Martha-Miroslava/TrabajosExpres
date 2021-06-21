@@ -5,21 +5,22 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 
-class ServiceEmployee: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+class ServiceEmployeeConsult: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var drawerLayout: DrawerLayout
     lateinit var navigationView: NavigationView
     lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.service_employee)
+        setContentView(R.layout.service_employee_consult)
         drawerLayout = findViewById(R.id.drawer_layout_employee)
         navigationView = findViewById(R.id.NavegationViewEmployee)
         toolbar = findViewById(R.id.toolbar_employee)
